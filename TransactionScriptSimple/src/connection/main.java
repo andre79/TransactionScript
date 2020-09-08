@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class main {
 	public static void main(String[] args) throws Exception {
-		MySQLAccess dao = new MySQLAccess();
+		Gateway dao = new Gateway();
 		Scanner s = new Scanner(System.in);
 
 		System.out.println("Estado da conexão");
