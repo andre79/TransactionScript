@@ -65,7 +65,7 @@ public class main {
 				initDate = input.nextLine();
 				System.out.println("Sugestão em 2020-08-22 a 2020-09-03 (Efeito didático)");
 				finalDate = input.nextLine();
-				dao.returnFinancialLaunchByDateInterval(initDate = "2020/08/01", finalDate = "2020/09/31");
+				dao.returnFinancialLaunchByDateInterval(initDate, finalDate);
 				System.out.println("Transação Finalizada");
 				break;
 			case 7:

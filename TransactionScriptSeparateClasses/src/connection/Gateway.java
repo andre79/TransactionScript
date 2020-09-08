@@ -26,11 +26,32 @@ public class Gateway {
 	}
 
 	public void readProductList() throws SQLException {
-		pd.readProductList(db);
+		ResultSet resultSet =  pd.readProductList(db);
+		
+		System.out.println("Chave -- Nome ------------------ Tipo");
+
+		while (resultSet.next()) {
+			int key = resultSet.getInt("key");
+			String nome = resultSet.getString("nome");
+			String tipo = resultSet.getString("tipo");
+			System.out.println(key + " ------ " + nome + " ------ " + tipo);
+		}
+		
 	}
 
 	public void readContractsList() throws SQLException {
-		ct.readContractsList(db);
+		ResultSet resultSet = ct.readContractsList(db);
+		
+		System.out.println("Contrato -- Produto ------------------ Receita ------------------ Data");
+
+		while (resultSet.next()) {
+			int codigocontrato = resultSet.getInt("key");
+			int codigoproduto = resultSet.getInt("produto");
+			String receita = resultSet.getString("receita");
+			String dataAssinatura = resultSet.getString("dataAssinattura");
+			System.out.println(
+					codigocontrato + " ------ " + codigoproduto + " ------ " + receita + " ------ " + dataAssinatura);
+		}
 	}
 
 	public void returnAllFinancialLaunch() throws SQLException {
